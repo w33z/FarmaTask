@@ -1,0 +1,7 @@
+Pods/
+FarmaTest.xcodeproj/xcshareddata/
+FarmaTest.xcodeproj/xcuserdata/
+FarmaTest.xcworkspace/xcuserdata/
+FarmaTest.xcworkspace/xcshareddata/
+Podfile.lock
+Podfile.save
