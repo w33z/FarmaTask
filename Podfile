@@ -6,6 +6,7 @@ target 'FarmaTest' do
   use_frameworks!
 
   # Pods for FarmaTest
+  pod 'Kingfisher', '~> 5.0'
 
   target 'FarmaTestTests' do
     inherit! :search_paths

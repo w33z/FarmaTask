@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias ContactsHandler = ((_ contacts: [Contact]?, _ error: Error?) -> ())
+typealias ContactsHandler = (Result<[Contact]?, Error>) -> ()
 
 class ContactViewModel {
     var contacts: [Contact]?
@@ -18,7 +18,7 @@ class ContactViewModel {
         let urlRequest = URLRequest(url: url)
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard error == nil else {
-                completion(nil, error)
+                completion(.failure(error!))
                 return
             }
             
@@ -32,10 +32,10 @@ class ContactViewModel {
             if saveResult != .rolledBack {
                 print("Download contacts save result success")
                 DatabaseService.shared.mergeWorkersChangesWithMainContext()
-                completion(contacts, nil)
+                completion(.success(contacts))
             } else {
                 let error = NSError(domain:"", code: 500, userInfo:[ NSLocalizedDescriptionKey: "Contacts save result failure"]) as Error
-                completion(nil, error)
+                completion(.failure(error))
             }
 
         }.resume()

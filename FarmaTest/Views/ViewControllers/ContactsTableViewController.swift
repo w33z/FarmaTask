@@ -25,15 +25,18 @@ class ContactsTableViewController: UITableViewController {
         
         viewmodel = ContactViewModel()
         
-        viewmodel.getContacts { (contacts, error) in
-            if let error = error {
-                debugPrint(error.localizedDescription)
+        viewmodel.getContacts { result in
+            switch result {
+                case .success(let contacts):
+                    self.contacts = contacts
+                case .failure(let error):
+                    print(error.localizedDescription)
             }
-            
-            self.contacts = contacts
         }
     }
+}
 
+extension ContactsTableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -56,4 +59,6 @@ class ContactsTableViewController: UITableViewController {
 
         return cell
     }
+    
+    
 }
