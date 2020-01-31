@@ -21,7 +21,7 @@ public class Location: NSManagedObject {
         case street
     }
     
-    // MARK: Decoding
+    // MARK: - Decoding
 
     public required convenience init(from decoder: Decoder) throws {
         guard let codingMOC = CodingUserInfoKey.managedObjectContext,
@@ -41,6 +41,6 @@ public class Location: NSManagedObject {
     }
 }
 
-// MARK: Extension
+// MARK: - Extension
 
 extension Location: Decodable {}

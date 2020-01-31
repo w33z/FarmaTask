@@ -47,7 +47,8 @@ class DatabaseService  {
         description.shouldMigrateStoreAutomatically = true
         description.shouldInferMappingModelAutomatically = true
         container.persistentStoreDescriptions = [description]
-        
+
+
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -68,9 +69,9 @@ class DatabaseService  {
         return container
     }()
     
-    //MARK: - Save context
+    // MARK: - Save context
     
-    func saveContext(_ context: NSManagedObjectContext) -> SaveStatus {
+    @discardableResult func saveContext(_ context: NSManagedObjectContext) -> SaveStatus {
 
         if context.hasChanges {
             do {
@@ -94,20 +95,15 @@ class DatabaseService  {
         }
     }
     
-    //MARK: - Workers Managed Object Context
+    // MARK: - Workers Managed Object Context
     
     lazy private var workersContext: NSManagedObjectContext = {
-        return persistentContainer.newBackgroundContext()
+        let context = persistentContainer.newBackgroundContext()
+        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        return context
     }()
-    
-    //MARK: - Synchronize changes in Main context with Workers context
-    
-// TODO: Unused for now
-//    @objc func mergeMainContextChangesWithWorkerContext(notification: Notification){
-//        workerManagedObjectContext.mergeChanges(fromContextDidSave: notification)
-//    }
 
-    //MARK: - Synchronize Workers
+    // MARK: - Synchronize Workers
     /// Sync changes in Workers context
     /// with Main context
     ///
@@ -119,7 +115,7 @@ class DatabaseService  {
         }
     }
     
-    //MARK: - Helpers
+    // MARK: - Helpers
     
     func getContext(_ contextType: ContextType) -> NSManagedObjectContext {
         switch contextType {
@@ -131,7 +127,7 @@ class DatabaseService  {
     }
 }
 
-//MARK: - Managed Object Context in Decoders
+// MARK: - Managed Object Context in Decoders
 
 public extension CodingUserInfoKey {
     static let managedObjectContext = CodingUserInfoKey(rawValue: "managedObjectContext")

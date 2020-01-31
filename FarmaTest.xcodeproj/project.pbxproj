@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,16 @@
 		2504A49623DF0BF6003CB483 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2504A49523DF0BF6003CB483 /* ContactViewModel.swift */; };
 		2504A49823DF0F50003CB483 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2504A49723DF0F50003CB483 /* StringExtension.swift */; };
 		2504A49D23DF1E38003CB483 /* FarmaTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2504A49B23DF1E38003CB483 /* FarmaTest.xcdatamodeld */; };
+		2510FEB323E1D8E500E7F829 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2510FEB123E1D8E500E7F829 /* ContactTableViewCell.swift */; };
+		2510FEB423E1D8E500E7F829 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2510FEB223E1D8E500E7F829 /* ContactTableViewCell.xib */; };
+		2510FEB623E1D93400E7F829 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2510FEB523E1D93400E7F829 /* UIViewExtension.swift */; };
+		2510FEB823E1E93400E7F829 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2510FEB723E1E93400E7F829 /* UITableViewExtension.swift */; };
+		2510FEBA23E1F42F00E7F829 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2510FEB923E1F42F00E7F829 /* Spinner.swift */; };
+		25339E9F23E2EE1200CC453E /* UserdefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25339E9E23E2EE1200CC453E /* UserdefaultsService.swift */; };
+		25339EA123E318E900CC453E /* ContactDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25339EA023E318E900CC453E /* ContactDetailsView.swift */; };
+		25339EA423E3190600CC453E /* ContactDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25339EA323E3190600CC453E /* ContactDetailsView.xib */; };
+		2539C4E323E494480045DF1D /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539C4E223E494480045DF1D /* ContactDetailsViewController.swift */; };
+		2539C4E523E4983B0045DF1D /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539C4E423E4983B0045DF1D /* SplitViewController.swift */; };
 		2547A83A23E1C519008E089F /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2547A83923E1C519008E089F /* NSManagedObjectExtension.swift */; };
 		2590147C23E1C8400001167F /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2590147B23E1C8400001167F /* DatabaseService.swift */; };
 		2590148723E1C9160001167F /* Name+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2547A82523E1BF1F008E089F /* Name+CoreDataClass.swift */; };
@@ -23,6 +33,7 @@
 		2590148E23E1C9160001167F /* Street+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2547A82C23E1BF1F008E089F /* Street+CoreDataProperties.swift */; };
 		2590148F23E1C9160001167F /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2547A82D23E1BF1F008E089F /* Location+CoreDataClass.swift */; };
 		2590149023E1C9160001167F /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2547A82E23E1BF1F008E089F /* Location+CoreDataProperties.swift */; };
+		25973D5723E44C2E00470B36 /* BaseNibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25973D5623E44C2E00470B36 /* BaseNibView.swift */; };
 		25D205A623DDE47C000F435C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D205A523DDE47C000F435C /* AppDelegate.swift */; };
 		25D205AA23DDE47C000F435C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D205A923DDE47C000F435C /* ViewController.swift */; };
 		25D205AD23DDE47C000F435C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D205AB23DDE47C000F435C /* Main.storyboard */; };
@@ -30,8 +41,8 @@
 		25D205B223DDE47C000F435C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D205B023DDE47C000F435C /* LaunchScreen.storyboard */; };
 		25D205BD23DDE47C000F435C /* FarmaTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D205BC23DDE47C000F435C /* FarmaTestTests.swift */; };
 		25D205CD23DED4F2000F435C /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D205CC23DED4F2000F435C /* ContactsTableViewController.swift */; };
-		25D205CF23DED51A000F435C /* DetailsContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D205CE23DED51A000F435C /* DetailsContactViewController.swift */; };
 		25D205D723DED6A8000F435C /* StoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D205D623DED6A8000F435C /* StoryboardExtension.swift */; };
+		AC71493F602D4F1BE34E7DBA /* Pods_FarmaTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB87DEC16895F34762A066F6 /* Pods_FarmaTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +62,16 @@
 		2504A49523DF0BF6003CB483 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		2504A49723DF0F50003CB483 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		2504A49C23DF1E38003CB483 /* FarmaTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FarmaTest.xcdatamodel; sourceTree = "<group>"; };
+		2510FEB123E1D8E500E7F829 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		2510FEB223E1D8E500E7F829 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
+		2510FEB523E1D93400E7F829 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		2510FEB723E1E93400E7F829 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		2510FEB923E1F42F00E7F829 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		25339E9E23E2EE1200CC453E /* UserdefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdefaultsService.swift; sourceTree = "<group>"; };
+		25339EA023E318E900CC453E /* ContactDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsView.swift; sourceTree = "<group>"; };
+		25339EA323E3190600CC453E /* ContactDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactDetailsView.xib; sourceTree = "<group>"; };
+		2539C4E223E494480045DF1D /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
+		2539C4E423E4983B0045DF1D /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		2547A82523E1BF1F008E089F /* Name+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Name+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2547A82623E1BF1F008E089F /* Name+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Name+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2547A82723E1BF1F008E089F /* Picture+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Picture+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -63,6 +84,7 @@
 		2547A82E23E1BF1F008E089F /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2547A83923E1C519008E089F /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtension.swift; sourceTree = "<group>"; };
 		2590147B23E1C8400001167F /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		25973D5623E44C2E00470B36 /* BaseNibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNibView.swift; sourceTree = "<group>"; };
 		25D205A223DDE47C000F435C /* FarmaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarmaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D205A523DDE47C000F435C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25D205A923DDE47C000F435C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,7 +96,6 @@
 		25D205BC23DDE47C000F435C /* FarmaTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmaTestTests.swift; sourceTree = "<group>"; };
 		25D205BE23DDE47D000F435C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25D205CC23DED4F2000F435C /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
-		25D205CE23DED51A000F435C /* DetailsContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsContactViewController.swift; sourceTree = "<group>"; };
 		25D205D623DED6A8000F435C /* StoryboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardExtension.swift; sourceTree = "<group>"; };
 		91D3A71444386F3BAF094C9C /* Pods-FarmaTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FarmaTest.release.xcconfig"; path = "Target Support Files/Pods-FarmaTest/Pods-FarmaTest.release.xcconfig"; sourceTree = "<group>"; };
 		DB87DEC16895F34762A066F6 /* Pods_FarmaTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FarmaTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC71493F602D4F1BE34E7DBA /* Pods_FarmaTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,10 +122,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2510FEB023E1D8CA00E7F829 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2510FEB123E1D8E500E7F829 /* ContactTableViewCell.swift */,
+				2510FEB223E1D8E500E7F829 /* ContactTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		25339EA223E318EE00CC453E /* Contact Details View */ = {
+			isa = PBXGroup;
+			children = (
+				25339EA023E318E900CC453E /* ContactDetailsView.swift */,
+				25339EA323E3190600CC453E /* ContactDetailsView.xib */,
+			);
+			path = "Contact Details View";
+			sourceTree = "<group>";
+		};
 		2590147A23E1C8330001167F /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				2590147B23E1C8400001167F /* DatabaseService.swift */,
+				25339E9E23E2EE1200CC453E /* UserdefaultsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -157,8 +198,12 @@
 		25D205C723DE1A19000F435C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				25339EA223E318EE00CC453E /* Contact Details View */,
+				2510FEB023E1D8CA00E7F829 /* Cells */,
 				25D205C923DE1A35000F435C /* ViewControllers */,
 				25D205C823DE1A21000F435C /* Storyboards */,
+				2510FEB923E1F42F00E7F829 /* Spinner.swift */,
+				25973D5623E44C2E00470B36 /* BaseNibView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,8 +220,9 @@
 		25D205C923DE1A35000F435C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2539C4E223E494480045DF1D /* ContactDetailsViewController.swift */,
 				25D205CC23DED4F2000F435C /* ContactsTableViewController.swift */,
-				25D205CE23DED51A000F435C /* DetailsContactViewController.swift */,
+				2539C4E423E4983B0045DF1D /* SplitViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -212,6 +258,8 @@
 				25D205D623DED6A8000F435C /* StoryboardExtension.swift */,
 				2504A49723DF0F50003CB483 /* StringExtension.swift */,
 				2547A83923E1C519008E089F /* NSManagedObjectExtension.swift */,
+				2510FEB523E1D93400E7F829 /* UIViewExtension.swift */,
+				2510FEB723E1E93400E7F829 /* UITableViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -247,6 +295,7 @@
 				25D2059E23DDE47C000F435C /* Sources */,
 				25D2059F23DDE47C000F435C /* Frameworks */,
 				25D205A023DDE47C000F435C /* Resources */,
+				556342F534F8690E5173FDAA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -319,8 +368,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2510FEB423E1D8E500E7F829 /* ContactTableViewCell.xib in Resources */,
 				25D205B223DDE47C000F435C /* LaunchScreen.storyboard in Resources */,
 				25D205AF23DDE47C000F435C /* Assets.xcassets in Resources */,
+				25339EA423E3190600CC453E /* ContactDetailsView.xib in Resources */,
 				25D205AD23DDE47C000F435C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +386,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		556342F534F8690E5173FDAA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FarmaTest/Pods-FarmaTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FarmaTest/Pods-FarmaTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FarmaTest/Pods-FarmaTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A7849409030C905B58F5CD98 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -386,17 +454,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25339EA123E318E900CC453E /* ContactDetailsView.swift in Sources */,
 				2590148723E1C9160001167F /* Name+CoreDataClass.swift in Sources */,
+				2539C4E323E494480045DF1D /* ContactDetailsViewController.swift in Sources */,
 				2590148823E1C9160001167F /* Name+CoreDataProperties.swift in Sources */,
+				2510FEB623E1D93400E7F829 /* UIViewExtension.swift in Sources */,
+				2510FEB823E1E93400E7F829 /* UITableViewExtension.swift in Sources */,
 				2590148923E1C9160001167F /* Picture+CoreDataClass.swift in Sources */,
 				2590148A23E1C9160001167F /* Picture+CoreDataProperties.swift in Sources */,
+				25973D5723E44C2E00470B36 /* BaseNibView.swift in Sources */,
 				2590148B23E1C9160001167F /* Contact+CoreDataClass.swift in Sources */,
+				2510FEBA23E1F42F00E7F829 /* Spinner.swift in Sources */,
 				2590148C23E1C9160001167F /* Contact+CoreDataProperties.swift in Sources */,
 				2590148D23E1C9160001167F /* Street+CoreDataClass.swift in Sources */,
 				2590148E23E1C9160001167F /* Street+CoreDataProperties.swift in Sources */,
 				2590148F23E1C9160001167F /* Location+CoreDataClass.swift in Sources */,
+				2539C4E523E4983B0045DF1D /* SplitViewController.swift in Sources */,
 				2590149023E1C9160001167F /* Location+CoreDataProperties.swift in Sources */,
 				2504A49623DF0BF6003CB483 /* ContactViewModel.swift in Sources */,
+				25339E9F23E2EE1200CC453E /* UserdefaultsService.swift in Sources */,
 				25D205AA23DDE47C000F435C /* ViewController.swift in Sources */,
 				25D205D723DED6A8000F435C /* StoryboardExtension.swift in Sources */,
 				2547A83A23E1C519008E089F /* NSManagedObjectExtension.swift in Sources */,
@@ -404,8 +480,8 @@
 				25D205CD23DED4F2000F435C /* ContactsTableViewController.swift in Sources */,
 				2590147C23E1C8400001167F /* DatabaseService.swift in Sources */,
 				2504A49D23DF1E38003CB483 /* FarmaTest.xcdatamodeld in Sources */,
+				2510FEB323E1D8E500E7F829 /* ContactTableViewCell.swift in Sources */,
 				2504A49823DF0F50003CB483 /* StringExtension.swift in Sources */,
-				25D205CF23DED51A000F435C /* DetailsContactViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

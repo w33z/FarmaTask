@@ -20,13 +20,13 @@ extension UIStoryboard {
         }
     }
     
-    //MARK: - Convenience Init
+    // MARK: - Convenience Init
     
     convenience init(storyboard: Storyboard, bundle: Bundle? = nil) {
         self.init(name: storyboard.fileName, bundle: bundle)
     }
     
-    //MARK: - Class Function
+    // MARK: - Class Function
     
     class func storyboard(_ storyboard: Storyboard, bundle: Bundle? = nil) -> UIStoryboard {
         return UIStoryboard(name: storyboard.fileName, bundle: bundle)

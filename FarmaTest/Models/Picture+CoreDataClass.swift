@@ -19,7 +19,7 @@ public class Picture: NSManagedObject {
         case large
     }
     
-    // MARK: Decoding
+    // MARK: - Decoding
 
     public required convenience init(from decoder: Decoder) throws {
         guard let codingMOC = CodingUserInfoKey.managedObjectContext,
@@ -37,6 +37,6 @@ public class Picture: NSManagedObject {
     }
 }
 
-// MARK: Extension
+// MARK: - Extension
 
 extension Picture: Decodable {}

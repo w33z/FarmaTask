@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias ContactsHandler = (Result<[Contact]?, Error>) -> ()
+typealias ContactsHandler = (Result<(), Error>) -> ()
 
 class ContactViewModel {
     var contacts: [Contact]?
@@ -25,14 +25,16 @@ class ContactViewModel {
             guard let data = data else { return }
 
             let context = DatabaseService.shared.getContext(.workers)
-            let contacts = Contact.mapArray(from: data, using: context)
+            _ = Contact.mapArray(from: data, using: context)
             
             let saveResult = DatabaseService.shared.saveContext(context)
             
             if saveResult != .rolledBack {
                 print("Download contacts save result success")
                 DatabaseService.shared.mergeWorkersChangesWithMainContext()
-                completion(.success(contacts))
+                UserDefaults.standard.set(.lastSynchronizationTimestamp, to: String(describing: Date()))
+                
+                completion(.success(()))
             } else {
                 let error = NSError(domain:"", code: 500, userInfo:[ NSLocalizedDescriptionKey: "Contacts save result failure"]) as Error
                 completion(.failure(error))

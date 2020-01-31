@@ -22,7 +22,7 @@ public class Contact: NSManagedObject {
         case picture
     }
     
-    // MARK: Decoding
+    // MARK: - Decoding
     
     public required convenience init(from decoder: Decoder) throws {
         guard let codingMOC = CodingUserInfoKey.managedObjectContext,
@@ -41,15 +41,17 @@ public class Contact: NSManagedObject {
         name = try container.decodeIfPresent(Name.self, forKey: .name)
         location = try container.decodeIfPresent(Location.self, forKey: .location)
         picture = try container.decodeIfPresent(Picture.self, forKey: .picture)
+        
+        isFavorite = false
     }
 }
 
-// MARK: Extension
+// MARK: - Extension
 
 extension Contact: Decodable {}
 
 extension Contact {
-    // MARK: Mapping
+    // MARK: - Mapping
 
     static func mapArray(from data: Data, using context: NSManagedObjectContext) -> [Contact]? {
         guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext else {

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactDetailsView" customModule="FarmaTest" customModuleProvider="target">
+            <connections>
+                <outlet property="addressLabel" destination="ocO-Ku-gFV" id="PgT-xl-fgH"/>
+                <outlet property="emailLabel" destination="CRK-Fq-f0H" id="yfn-Lk-vf2"/>
+                <outlet property="favoriteButton" destination="fox-h1-GQ7" id="3Bd-Rk-Ry2"/>
+                <outlet property="nameLabel" destination="koK-UJ-nE9" id="nJn-WY-VcY"/>
+                <outlet property="phoneLabel" destination="tQe-Rj-Vzj" id="7FO-Z0-f02"/>
+                <outlet property="profileImageView" destination="ilZ-rb-tl0" id="0xo-Uj-T7J"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="TZW-T8-zUK">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i4o-X4-0Hq">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEO-J1-ymT">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="526"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ilZ-rb-tl0">
+                                    <rect key="frame" x="60" y="100" width="200" height="200"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="200" id="3hr-y1-NfV"/>
+                                        <constraint firstAttribute="width" constant="200" id="Ly1-Xo-2xM"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="100"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="R2W-6g-pZR">
+                                    <rect key="frame" x="16" y="332" width="288" height="178"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koK-UJ-nE9">
+                                            <rect key="frame" x="0.0" y="0.0" width="45" height="20.5"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocO-Ku-gFV">
+                                            <rect key="frame" x="0.0" y="52.5" width="63" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRK-Fq-f0H">
+                                            <rect key="frame" x="0.0" y="105" width="41" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQe-Rj-Vzj">
+                                            <rect key="frame" x="0.0" y="157.5" width="49" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fox-h1-GQ7">
+                                    <rect key="frame" x="253" y="32" width="35" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="3Zm-2C-UB2"/>
+                                        <constraint firstAttribute="width" constant="35" id="POs-ET-HAO"/>
+                                    </constraints>
+                                    <state key="normal" title="Button" image="star"/>
+                                    <connections>
+                                        <action selector="favoriteButtonDidTap:" destination="-1" eventType="touchUpInside" id="YDR-dS-YS5"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="R2W-6g-pZR" secondAttribute="trailing" constant="16" id="3Bq-g3-Unt"/>
+                                <constraint firstAttribute="bottom" secondItem="R2W-6g-pZR" secondAttribute="bottom" constant="16" id="Axz-2r-plK"/>
+                                <constraint firstAttribute="trailing" secondItem="fox-h1-GQ7" secondAttribute="trailing" constant="32" id="J9r-Qe-hzj"/>
+                                <constraint firstItem="R2W-6g-pZR" firstAttribute="leading" secondItem="GEO-J1-ymT" secondAttribute="leading" constant="16" id="QOr-Kl-wIm"/>
+                                <constraint firstItem="fox-h1-GQ7" firstAttribute="top" secondItem="GEO-J1-ymT" secondAttribute="top" constant="32" id="arw-ad-Tqx"/>
+                                <constraint firstItem="R2W-6g-pZR" firstAttribute="top" secondItem="ilZ-rb-tl0" secondAttribute="bottom" constant="32" id="kad-ks-zdQ"/>
+                                <constraint firstItem="ilZ-rb-tl0" firstAttribute="top" secondItem="GEO-J1-ymT" secondAttribute="top" constant="100" id="x2y-8u-eD3"/>
+                                <constraint firstItem="ilZ-rb-tl0" firstAttribute="centerX" secondItem="GEO-J1-ymT" secondAttribute="centerX" id="zbe-Ma-vSp"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="GEO-J1-ymT" firstAttribute="top" secondItem="i4o-X4-0Hq" secondAttribute="top" id="0XR-UO-zCU"/>
+                        <constraint firstItem="GEO-J1-ymT" firstAttribute="leading" secondItem="i4o-X4-0Hq" secondAttribute="leading" id="4AL-xo-zH7"/>
+                        <constraint firstItem="GEO-J1-ymT" firstAttribute="trailing" secondItem="i4o-X4-0Hq" secondAttribute="trailing" id="lvg-1o-53j"/>
+                        <constraint firstItem="GEO-J1-ymT" firstAttribute="width" secondItem="i4o-X4-0Hq" secondAttribute="width" id="vF1-GB-lug"/>
+                        <constraint firstItem="GEO-J1-ymT" firstAttribute="bottom" secondItem="i4o-X4-0Hq" secondAttribute="bottom" id="xjr-W8-d5g"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="i4o-X4-0Hq" secondAttribute="bottom" id="Qc0-cF-GZo"/>
+                <constraint firstItem="i4o-X4-0Hq" firstAttribute="leading" secondItem="TZW-T8-zUK" secondAttribute="leading" id="alp-Gt-1uu"/>
+                <constraint firstItem="i4o-X4-0Hq" firstAttribute="top" secondItem="TZW-T8-zUK" secondAttribute="top" id="t8k-vl-fFA"/>
+                <constraint firstAttribute="trailing" secondItem="i4o-X4-0Hq" secondAttribute="trailing" id="tvs-fo-Xl1"/>
+            </constraints>
+            <point key="canvasLocation" x="33" y="-39"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="star" width="128" height="128"/>
+    </resources>
+</document>
