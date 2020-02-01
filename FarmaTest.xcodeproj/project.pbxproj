@@ -19,8 +19,9 @@
 		25339E9F23E2EE1200CC453E /* UserdefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25339E9E23E2EE1200CC453E /* UserdefaultsService.swift */; };
 		25339EA123E318E900CC453E /* ContactDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25339EA023E318E900CC453E /* ContactDetailsView.swift */; };
 		25339EA423E3190600CC453E /* ContactDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25339EA323E3190600CC453E /* ContactDetailsView.xib */; };
+		2537893E23E5A9B200FE1DBF /* ContactTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2537893D23E5A9B200FE1DBF /* ContactTableViewHeader.swift */; };
+		2537894023E5A9B900FE1DBF /* ContactTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2537893F23E5A9B900FE1DBF /* ContactTableViewHeader.xib */; };
 		2539C4E323E494480045DF1D /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539C4E223E494480045DF1D /* ContactDetailsViewController.swift */; };
-		2539C4E523E4983B0045DF1D /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539C4E423E4983B0045DF1D /* SplitViewController.swift */; };
 		2547A83A23E1C519008E089F /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2547A83923E1C519008E089F /* NSManagedObjectExtension.swift */; };
 		2590147C23E1C8400001167F /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2590147B23E1C8400001167F /* DatabaseService.swift */; };
 		2590148723E1C9160001167F /* Name+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2547A82523E1BF1F008E089F /* Name+CoreDataClass.swift */; };
@@ -70,8 +71,9 @@
 		25339E9E23E2EE1200CC453E /* UserdefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdefaultsService.swift; sourceTree = "<group>"; };
 		25339EA023E318E900CC453E /* ContactDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsView.swift; sourceTree = "<group>"; };
 		25339EA323E3190600CC453E /* ContactDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactDetailsView.xib; sourceTree = "<group>"; };
+		2537893D23E5A9B200FE1DBF /* ContactTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewHeader.swift; sourceTree = "<group>"; };
+		2537893F23E5A9B900FE1DBF /* ContactTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewHeader.xib; sourceTree = "<group>"; };
 		2539C4E223E494480045DF1D /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
-		2539C4E423E4983B0045DF1D /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		2547A82523E1BF1F008E089F /* Name+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Name+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2547A82623E1BF1F008E089F /* Name+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Name+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2547A82723E1BF1F008E089F /* Picture+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Picture+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -131,13 +133,22 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		25339EA223E318EE00CC453E /* Contact Details View */ = {
+		25339EA223E318EE00CC453E /* ContactDetailsView */ = {
 			isa = PBXGroup;
 			children = (
 				25339EA023E318E900CC453E /* ContactDetailsView.swift */,
 				25339EA323E3190600CC453E /* ContactDetailsView.xib */,
 			);
-			path = "Contact Details View";
+			path = ContactDetailsView;
+			sourceTree = "<group>";
+		};
+		2537893C23E5A97C00FE1DBF /* ContactTableViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+				2537893D23E5A9B200FE1DBF /* ContactTableViewHeader.swift */,
+				2537893F23E5A9B900FE1DBF /* ContactTableViewHeader.xib */,
+			);
+			path = ContactTableViewHeader;
 			sourceTree = "<group>";
 		};
 		2590147A23E1C8330001167F /* Services */ = {
@@ -198,7 +209,8 @@
 		25D205C723DE1A19000F435C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				25339EA223E318EE00CC453E /* Contact Details View */,
+				2537893C23E5A97C00FE1DBF /* ContactTableViewHeader */,
+				25339EA223E318EE00CC453E /* ContactDetailsView */,
 				2510FEB023E1D8CA00E7F829 /* Cells */,
 				25D205C923DE1A35000F435C /* ViewControllers */,
 				25D205C823DE1A21000F435C /* Storyboards */,
@@ -222,7 +234,6 @@
 			children = (
 				2539C4E223E494480045DF1D /* ContactDetailsViewController.swift */,
 				25D205CC23DED4F2000F435C /* ContactsTableViewController.swift */,
-				2539C4E423E4983B0045DF1D /* SplitViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -369,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2510FEB423E1D8E500E7F829 /* ContactTableViewCell.xib in Resources */,
+				2537894023E5A9B900FE1DBF /* ContactTableViewHeader.xib in Resources */,
 				25D205B223DDE47C000F435C /* LaunchScreen.storyboard in Resources */,
 				25D205AF23DDE47C000F435C /* Assets.xcassets in Resources */,
 				25339EA423E3190600CC453E /* ContactDetailsView.xib in Resources */,
@@ -469,8 +481,8 @@
 				2590148D23E1C9160001167F /* Street+CoreDataClass.swift in Sources */,
 				2590148E23E1C9160001167F /* Street+CoreDataProperties.swift in Sources */,
 				2590148F23E1C9160001167F /* Location+CoreDataClass.swift in Sources */,
-				2539C4E523E4983B0045DF1D /* SplitViewController.swift in Sources */,
 				2590149023E1C9160001167F /* Location+CoreDataProperties.swift in Sources */,
+				2537893E23E5A9B200FE1DBF /* ContactTableViewHeader.swift in Sources */,
 				2504A49623DF0BF6003CB483 /* ContactViewModel.swift in Sources */,
 				25339E9F23E2EE1200CC453E /* UserdefaultsService.swift in Sources */,
 				25D205AA23DDE47C000F435C /* ViewController.swift in Sources */,

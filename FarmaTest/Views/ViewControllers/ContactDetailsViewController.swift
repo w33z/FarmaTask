@@ -14,6 +14,8 @@ class ContactDetailsViewController: UIViewController {
     
     @IBOutlet private var detailsView: ContactDetailsView!
     
+    private var viewmodel: ContactViewModel!
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -22,11 +24,28 @@ class ContactDetailsViewController: UIViewController {
         setup()
     }
     
+    private func setupCallbacks() {
+        detailsView.favoriteButtonTapHandler = { [weak self] contact in
+            guard let strongSelf = self else { return }
+            let updateResult = strongSelf.viewmodel.updateContactFavorite(contact: contact)
+            
+            switch updateResult {
+            case .success():
+                debugPrint("Update isFavorite flag success")
+            case .failure(let error):
+                debugPrint(error)
+            }
+        }
+    }
+    
     private func setup() {
+        viewmodel = ContactViewModel()
         guard let masterVC = self.splitViewController?.primaryViewController as? ContactsTableViewController else { return }
         masterVC.delegate = self
         
         splitViewController?.preferredDisplayMode = .allVisible
+        
+        setupCallbacks()
     }
 }
 

@@ -22,6 +22,8 @@ class ContactDetailsView: BaseNibView {
     
     private var contact: Contact?
     
+    var favoriteButtonTapHandler: ((_ contact: Contact) -> ())?
+    
     // MARK: - Lifecycle
     
     override func setViewApperance() {
@@ -74,12 +76,14 @@ class ContactDetailsView: BaseNibView {
     
     @IBAction func favoriteButtonDidTap(_ sender: UIButton) {
         guard let contact = self.contact else { return }
-
+        setupFavoriteButtonImage(isFavorite: !contact.isFavorite)
+        favoriteButtonTapHandler?(contact)
     }
     
     private func setupFavoriteButtonImage(isFavorite: Bool) {
         let image = isFavorite ? UIImage(named: "starFilled") : UIImage(named: "star")
         favoriteButton.setImage(image, for: .normal)
     }
+    
 }
 

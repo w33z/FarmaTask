@@ -34,6 +34,7 @@ public class Name: NSManagedObject {
         first = try container.decodeIfPresent(String.self, forKey: .first)
         last = try container.decodeIfPresent(String.self, forKey: .last)
         title = try container.decodeIfPresent(String.self, forKey: .title)
+        id = UUID()
     }
 }
 

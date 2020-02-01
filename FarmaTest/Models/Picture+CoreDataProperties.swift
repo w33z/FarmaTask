@@ -17,6 +17,7 @@ extension Picture {
         return NSFetchRequest<Picture>(entityName: "Picture")
     }
 
+    @NSManaged public var id: UUID
     @NSManaged public var thumbnail: String?
     @NSManaged public var medium: String?
     @NSManaged public var large: String?

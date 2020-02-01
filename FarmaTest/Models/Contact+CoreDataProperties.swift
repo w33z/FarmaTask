@@ -17,6 +17,7 @@ extension Contact {
         return NSFetchRequest<Contact>(entityName: "Contact") 
     }
 
+    @NSManaged public var id: UUID
     @NSManaged public var gender: String?
     @NSManaged public var email: String?
     @NSManaged public var phone: String?

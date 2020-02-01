@@ -34,6 +34,7 @@ public class Picture: NSManagedObject {
         thumbnail = try container.decodeIfPresent(String.self, forKey: .thumbnail)
         medium = try container.decodeIfPresent(String.self, forKey: .medium)
         large = try container.decodeIfPresent(String.self, forKey: .large)
+        id = UUID()
     }
 }
 

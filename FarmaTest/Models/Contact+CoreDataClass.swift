@@ -42,6 +42,7 @@ public class Contact: NSManagedObject {
         location = try container.decodeIfPresent(Location.self, forKey: .location)
         picture = try container.decodeIfPresent(Picture.self, forKey: .picture)
         
+        id = UUID()
         isFavorite = false
     }
 }
@@ -51,6 +52,38 @@ public class Contact: NSManagedObject {
 extension Contact: Decodable {}
 
 extension Contact {
+    // MARK: - Updating
+    
+    static func update(contact: Contact) -> Result<(),Error> {
+        let workerContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        workerContext.parent = DatabaseService.shared.getContext(.workers)
+        
+        let fetchRequest = Contact.fetchRequest() as NSFetchRequest
+        let predicate = NSPredicate(format: "id == %@", contact.id as CVarArg)
+        
+        fetchRequest.predicate = predicate
+        
+        do {
+            guard let result = try workerContext.fetch(fetchRequest).first else {
+                let error = NSError(domain:"", code: 404, userInfo:[ NSLocalizedDescriptionKey: "Object contact-ID: \(contact.id.uuidString) not found"]) as Error
+                return .failure(error)
+            }
+
+            result.isFavorite = contact.isFavorite
+            
+            workerContext.performAndWait {
+                DatabaseService.shared.saveContext(workerContext)
+            }
+            
+            DatabaseService.shared.mergeWorkersChangesWithMainContext()
+            
+            return .success(())
+        } catch let error as NSError {
+            print("[CoreData] Error \(error), \(error.userInfo)")
+            return .failure(error)
+        }
+    }
+    
     // MARK: - Mapping
 
     static func mapArray(from data: Data, using context: NSManagedObjectContext) -> [Contact]? {

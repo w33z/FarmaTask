@@ -32,6 +32,8 @@ public class Street: NSManagedObject {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         number = try container.decodeIfPresent(Int32.self, forKey: .number) ?? -1
         name = try container.decodeIfPresent(String.self, forKey: .name)
+        
+        id = UUID()
     }
 }
 

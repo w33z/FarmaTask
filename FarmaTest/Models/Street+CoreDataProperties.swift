@@ -17,6 +17,7 @@ extension Street {
         return NSFetchRequest<Street>(entityName: "Street")
     }
 
+    @NSManaged public var id: UUID
     @NSManaged public var number: Int32
     @NSManaged public var name: String?
     @NSManaged public var location: Location?

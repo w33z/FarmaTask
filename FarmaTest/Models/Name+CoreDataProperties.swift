@@ -17,6 +17,7 @@ extension Name {
         return NSFetchRequest<Name>(entityName: "Name")
     }
 
+    @NSManaged public var id: UUID
     @NSManaged public var first: String?
     @NSManaged public var last: String?
     @NSManaged public var title: String?

@@ -38,6 +38,8 @@ public class Location: NSManagedObject {
         country = try container.decodeIfPresent(String.self, forKey: .country)
         postcode = try container.decodeIfPresent(Int32.self, forKey: .postcode) ?? -1
         street = try container.decodeIfPresent(Street.self, forKey: .street)
+        
+        id = UUID()
     }
 }
 

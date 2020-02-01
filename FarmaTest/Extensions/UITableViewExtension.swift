@@ -14,4 +14,10 @@ extension UITableView {
         let nib = UINib(nibName: className, bundle: nil)
         register(nib, forCellReuseIdentifier: className)
     }
+    
+    func registerHeaderFooter<T: UITableViewHeaderFooterView>(_ cellClass: T.Type) {
+        let className = String(describing: cellClass)
+        let nib = UINib(nibName: className, bundle: nil)
+        register(nib, forHeaderFooterViewReuseIdentifier: className)
+    }
 }
