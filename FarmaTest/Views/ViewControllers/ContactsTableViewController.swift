@@ -43,10 +43,11 @@ class ContactsTableViewController: UITableViewController {
         viewmodel = ContactViewModel()
         setupTableView()
         
+        Spinner.show(on: self.view)
+        
         if UserDefaults.standard.get(.lastSynchronizationTimestamp) == nil {
             syncContacts()
         } else {
-            Spinner.show(on: self.view)
             performFetch()
         }
     }
