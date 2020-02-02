@@ -13,7 +13,7 @@ class AppDelegate: UIResponder ,UIApplicationDelegate {
     
     var window: UIWindow?
 
-    static let apiKey = "https://api.randomuser.me/?results=5&key=0A4F-FC2E-5C76-5678&seed=rekrutacja2020"
+    static let apiKey = "https://api.randomuser.me/?results=500&key=0A4F-FC2E-5C76-5678&seed=rekrutacja2020"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         

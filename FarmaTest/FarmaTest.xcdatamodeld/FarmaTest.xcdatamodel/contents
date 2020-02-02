@@ -20,24 +20,9 @@
         <attribute name="city" optional="YES" attributeType="String"/>
         <attribute name="country" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="postcode" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="state" optional="YES" attributeType="String"/>
         <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="location" inverseEntity="Contact"/>
         <relationship name="street" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Street" inverseName="location" inverseEntity="Street"/>
-        <uniquenessConstraints>
-            <uniquenessConstraint>
-                <constraint value="city"/>
-            </uniquenessConstraint>
-            <uniquenessConstraint>
-                <constraint value="country"/>
-            </uniquenessConstraint>
-            <uniquenessConstraint>
-                <constraint value="postcode"/>
-            </uniquenessConstraint>
-            <uniquenessConstraint>
-                <constraint value="state"/>
-            </uniquenessConstraint>
-        </uniquenessConstraints>
     </entity>
     <entity name="Name" representedClassName="Name" syncable="YES">
         <attribute name="first" optional="YES" attributeType="String"/>
@@ -45,14 +30,6 @@
         <attribute name="last" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="name" inverseEntity="Contact"/>
-        <uniquenessConstraints>
-            <uniquenessConstraint>
-                <constraint value="first"/>
-            </uniquenessConstraint>
-            <uniquenessConstraint>
-                <constraint value="last"/>
-            </uniquenessConstraint>
-        </uniquenessConstraints>
     </entity>
     <entity name="Picture" representedClassName="Picture" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -60,17 +37,6 @@
         <attribute name="medium" optional="YES" attributeType="String"/>
         <attribute name="thumbnail" optional="YES" attributeType="String"/>
         <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="picture" inverseEntity="Contact"/>
-        <uniquenessConstraints>
-            <uniquenessConstraint>
-                <constraint value="large"/>
-            </uniquenessConstraint>
-            <uniquenessConstraint>
-                <constraint value="medium"/>
-            </uniquenessConstraint>
-            <uniquenessConstraint>
-                <constraint value="thumbnail"/>
-            </uniquenessConstraint>
-        </uniquenessConstraints>
     </entity>
     <entity name="Street" representedClassName="Street" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -88,7 +54,7 @@
     </entity>
     <elements>
         <element name="Contact" positionX="-230.78515625" positionY="-549.74609375" width="128" height="178"/>
-        <element name="Location" positionX="44.546875" positionY="-210.97265625" width="128" height="148"/>
+        <element name="Location" positionX="44.546875" positionY="-210.97265625" width="128" height="133"/>
         <element name="Name" positionX="-460.51953125" positionY="-59.23828125" width="128" height="118"/>
         <element name="Picture" positionX="-231.453125" positionY="-250.9375" width="128" height="118"/>
         <element name="Street" positionX="-133.8125" positionY="-108.703125" width="128" height="103"/>

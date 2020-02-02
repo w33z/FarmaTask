@@ -16,32 +16,30 @@ class Spinner {
         let blackView = UIView()
         blackView.frame = view.bounds
         blackView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-        
-        let whiteView = UIView()
-        blackView.backgroundColor = .white
-        
-//        let origin = CGPoint(x: blackView.frame.width / 2, y: blackView.frame.height / 2)
-        let size = CGSize(width: 100, height: 100)
-        blackView.frame = CGRect(origin: blackView.center, size: size)
+        blackView.frame = view.bounds
         
         activityIndicator = UIActivityIndicatorView()
-        activityIndicator.style = .gray
-        activityIndicator.frame.origin = whiteView.center
+        activityIndicator.style = .whiteLarge
+        activityIndicator.frame.origin = blackView.center
         
-//        whiteView.addSubview(activityIndicator)
-        blackView.addSubview(whiteView)
+        blackView.addSubview(activityIndicator)
         
         view.addSubview(blackView)
-
+        
 //        UIApplication.shared.keyWindow?.addSubview(blackView)
         Spinner.activityIndicator = activityIndicator
         Spinner.container = blackView
         activityIndicator.startAnimating()
     }
     
+    static private func stop() {
+        guard let spinner = Spinner.activityIndicator, let container = Spinner.container else { return }
+        spinner.stopAnimating()
+        container.removeFromSuperview()
+    }
+    
     static func hide() {
-        Spinner.activityIndicator.stopAnimating()
-        Spinner.container.removeFromSuperview()
+        Spinner.stop()
         Spinner.container = nil
         Spinner.activityIndicator = nil
     }

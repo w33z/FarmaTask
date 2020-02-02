@@ -50,8 +50,7 @@ class ContactDetailsView: BaseNibView {
             addressLabel.text = """
                                 🏙
                                 \(street.name ?? "") \(street.number)
-                                \(location.state ?? ""), \(location.postcode)
-                                \(location.country ?? "")
+                                \(location.state ?? ""), \(location.country ?? "")
                                 """
         }
         

@@ -21,7 +21,6 @@ extension Location {
     @NSManaged public var city: String?
     @NSManaged public var state: String?
     @NSManaged public var country: String?
-    @NSManaged public var postcode: Int32
     @NSManaged public var street: Street?
     @NSManaged public var contact: Contact?
 

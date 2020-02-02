@@ -46,6 +46,7 @@ class ContactsTableViewController: UITableViewController {
         if UserDefaults.standard.get(.lastSynchronizationTimestamp) == nil {
             syncContacts()
         } else {
+            Spinner.show(on: self.view)
             performFetch()
         }
     }
@@ -87,6 +88,7 @@ class ContactsTableViewController: UITableViewController {
         }
         
         DispatchQueue.main.async {
+            Spinner.hide()
             self.tableView.reloadData()
         }
     }
@@ -161,18 +163,18 @@ extension ContactsTableViewController {
         
         guard let contact = viewmodel.fetchedResultsController.fetchedObjects?[index] else { return }
                         
-        if let detailsVC = splitViewController?.secondaryViewController as? ContactDetailsViewController {
-          splitViewController?.showDetailViewController(detailsVC, sender: nil)
-        }
-        
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            let storyboard = UIStoryboard.storyboard(.main)
-            let detailsVC: ContactDetailsViewController = storyboard.instantiateViewController()
-            navigationController?.pushViewController(detailsVC, animated: true)
-            detailsVC.contactDidSelect(contact)
-        } else {
-            delegate?.contactDidSelect(contact)
-        }
+        if let isCollapsed = splitViewController?.isCollapsed {
+             if isCollapsed {
+                 let storyboard = UIStoryboard.storyboard(.main)
+                 let detailsVC: ContactDetailsViewController = storyboard.instantiateViewController()
+               self.splitViewController?.showDetailViewController(detailsVC, sender: self)
+                detailsVC.contactDidSelect(contact)
+
+             } else {
+                delegate?.contactDidSelect(contact)
+             }
+
+         }
     }
 }
 

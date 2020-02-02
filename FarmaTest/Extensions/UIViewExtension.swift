@@ -22,7 +22,7 @@ extension UIView {
 extension UISplitViewController {
     var primaryViewController: UIViewController? {
         let navController = self.viewControllers.first as? UINavigationController
-        return navController?.topViewController 
+        return navController?.viewControllers.first
     }
 
     var secondaryViewController: UIViewController? {
