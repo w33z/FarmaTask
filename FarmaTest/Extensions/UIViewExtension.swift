@@ -19,6 +19,18 @@ extension UIView {
     }
 }
 
+extension UIViewController {
+    func showAlert(_ message: String) {
+        DispatchQueue.main.async {
+            let alertVC = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alertVC.addAction(dismissAction)
+        
+            self.present(alertVC, animated: true, completion: nil)
+        }
+    }
+}
+
 extension UISplitViewController {
     var primaryViewController: UIViewController? {
         let navController = self.viewControllers.first as? UINavigationController

@@ -42,14 +42,7 @@ class ContactsTableViewController: UITableViewController {
     private func setup() {
         viewmodel = ContactViewModel()
         setupTableView()
-        
-        Spinner.show(on: self.view)
-        
-        if UserDefaults.standard.get(.lastSynchronizationTimestamp) == nil {
-            syncContacts()
-        } else {
-            performFetch()
-        }
+        setupData()
     }
     
     private func setupTableView() {
@@ -61,21 +54,35 @@ class ContactsTableViewController: UITableViewController {
         viewmodel.fetchedResultsController.delegate = self
     }
     
+    private func setupData() {
+        Spinner.show(on: self.view)
+
+        if UserDefaults.standard.get(.lastSynchronizationTimestamp) == nil {
+            syncContacts()
+        } else {
+            performFetch()
+        }
+    }
+    
     @objc private func syncContacts() {
         viewmodel.getContacts { result in
             switch result {
                 case .success:
                     self.performFetch()
-                
-                    DispatchQueue.main.async {
-                        if self.tableRefreshControl.isRefreshing {
-                            self.tableRefreshControl.endRefreshing()
-                        }
-                    }
-                
                 case .failure(let error):
                     print(error.localizedDescription)
+                    self.showAlert(error.localizedDescription)
             }
+            
+            DispatchQueue.main.async {
+               if self.tableRefreshControl.isRefreshing {
+                   self.tableRefreshControl.endRefreshing()
+               }
+            }
+        }
+        
+        DispatchQueue.main.async {
+            Spinner.hide()
         }
     }
     
@@ -85,7 +92,7 @@ class ContactsTableViewController: UITableViewController {
         do {
             try self.viewmodel.fetchedResultsController.performFetch()
         } catch {
-            print(error.localizedDescription)
+            self.showAlert(error.localizedDescription)
         }
         
         DispatchQueue.main.async {

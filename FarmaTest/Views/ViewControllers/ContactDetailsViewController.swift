@@ -33,7 +33,7 @@ class ContactDetailsViewController: UIViewController {
             case .success():
                 debugPrint("Update isFavorite flag success")
             case .failure(let error):
-                debugPrint(error)
+                strongSelf.showAlert(error.localizedDescription)
             }
         }
     }
